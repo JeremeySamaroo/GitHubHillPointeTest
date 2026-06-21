@@ -19,6 +19,38 @@ services:
       timeout: 5s
       retries: 10
 
+  flyway:
+    image: flyway/flyway:11
+    container_name: flyway
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command:
+      - migrate
+      - -url=jdbc:postgresql://postgres:5432/app_db
+      - -user=root
+      - -password=root
+      - -baselineOnMigrate=true
+    volumes:
+      - /Users/jeremeysamaroo/dev/PersonalDev/GitHubHillpointeTest/GitHubHillPointeTest/app/sqlFiles:/flyway/sql
+    restart: "no"
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    ports:
+      - "8080:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
   app:
     image: node:22
     container_name: node-express-app
@@ -30,6 +62,8 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+      flyway:
+        condition: service_completed_successfully
     environment:
       NODE_ENV: development
       PORT: 3000
@@ -41,12 +75,14 @@ services:
     command: >
       sh -c "
       npm install -g npm@11.17.0 &&
-      npm install -D tsx && 
+      npm install -D tsx &&
       npm install &&
+      npm install bcrypt jsonwebtoken &&
+      npm install -D @types/bcrypt @types/jsonwebtoken &&
       npm run dev
       "
     restart: unless-stopped
 
 volumes:
   postgres_data:
-
+  pgadmin_data:

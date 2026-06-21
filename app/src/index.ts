@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
-import { Pool } from "pg";
+// import { Pool } from "pg";
 import app from "./app";
-
+import { pool } from "./config/db_PoolConfig";
 dotenv.config();
 
 // console.log("Port:", process.env.PORT);
@@ -13,13 +13,13 @@ dotenv.config();
 
 const PORT = Number(process.env.PORT) || 3000;
 
-const pool = new Pool({
-    host: process.env.DB_HOST || "postgres",
-    port: Number(process.env.DB_PORT) || 5432,
-    database: process.env.DB_NAME || "app_db",
-    user: process.env.DB_USER || "root",
-    password: process.env.DB_PASSWORD || "root",
-});
+// const pool = new Pool({
+//     host: process.env.DB_HOST || "postgres",
+//     port: Number(process.env.DB_PORT) || 5432,
+//     database: process.env.DB_NAME || "app_db",
+//     user: process.env.DB_USER || "root",
+//     password: process.env.DB_PASSWORD || "root",
+// });
 
 async function startServer() {
     try {

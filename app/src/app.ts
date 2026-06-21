@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
-import pokemonRoutes from "./routes/pokemon.routes";
+import pokemonRoutes from "./routes/pokemon.Routes";
+import authRoutes from "./routes/auth.Routes";
 const app = express();
 
 app.use(express.json());
@@ -18,5 +19,7 @@ app.get("/health", (req: Request, res: Response) => {
 });
 
 
+
+app.use("/auth", authRoutes);
 app.use("/pokemon", pokemonRoutes);
 export default app;
