@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-
+import pokemonRoutes from "./routes/pokemon.routes";
 const app = express();
 
 app.use(express.json());
@@ -17,4 +17,6 @@ app.get("/health", (req: Request, res: Response) => {
     });
 });
 
+
+app.use("/pokemon", pokemonRoutes);
 export default app;
