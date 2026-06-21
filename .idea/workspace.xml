@@ -4,13 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc55995d-86e5-49dc-8b20-68b1cd88a89a" name="Changes" comment="Created Skeleton Project for Node.Js application, with express and typescript utilizing a docker-compose.yml file to build the node.js backend and postgres db.">
-      <change afterPath="$PROJECT_DIR$/app/src/controllers/pokemon.Controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/routes/pokemon.Routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/services/pokeApi.Service.ts" afterDir="false" />
+    <list default="true" id="cc55995d-86e5-49dc-8b20-68b1cd88a89a" name="Changes" comment="added services, routes and controllers for pokeAPi.">
+      <change afterPath="$PROJECT_DIR$/app/jest.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/sqlFiles/V1__Create_Trainer_Table.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/config/db_PoolConfig.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/config/jwt.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/controllers/auth.Controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/middleware/auth.Middleware.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/models/trainer.Model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/repositories/trainer.Repository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/routes/auth.Routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/services/auth.Service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/tests/getPokemonByName.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.env" beforeDir="false" afterPath="$PROJECT_DIR$/app/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/controllers/pokemon.Controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/controllers/pokemon.Controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/jest.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/routes/pokemon.Routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/routes/pokemon.Routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +60,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/Users/jeremeysamaroo/dev/PersonalDev/GitHubHillpointeTest/GitHubHillPointeTest/app/node_modules/jest",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "vcs.Perforce",
     "ts.external.directory.path": "/Users/jeremeysamaroo/dev/PersonalDev/GitHubHillpointeTest/GitHubHillPointeTest/app/node_modules/typescript/lib",
@@ -58,6 +74,41 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
+  <component name="RunManager" selected="Jest.GET /pokemon/:name.should return pikachu data">
+    <configuration name="GET /pokemon/:name" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/app/src" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/app/src/tests/getPokemonByName.test.ts" />
+      <test-names>
+        <test-name value="GET /pokemon/:name" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="GET /pokemon/:name.should return pikachu data" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/app/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/app/src" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/app/src/tests/getPokemonByName.test.ts" />
+      <test-names>
+        <test-name value="GET /pokemon/:name" />
+        <test-name value="should return pikachu data" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.GET /pokemon/:name.should return pikachu data" />
+        <item itemvalue="Jest.GET /pokemon/:name" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,7 +117,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1782052131307</updated>
-      <workItem from="1782052132360" duration="8823000" />
+      <workItem from="1782052132360" duration="21676000" />
     </task>
     <task id="LOCAL-00001" summary="Created Skeleton Project for Node.Js application, with express and typescript utilizing a docker-compose.yml file to build the node.js backend and postgres db.">
       <created>1782058791788</created>
@@ -75,14 +126,33 @@
       <option name="project" value="LOCAL" />
       <updated>1782058791788</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added services, routes and controllers for pokeAPi.">
+      <created>1782061016187</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1782061016187</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created Skeleton Project for Node.Js application, with express and typescript utilizing a docker-compose.yml file to build the node.js backend and postgres db." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Skeleton Project for Node.Js application, with express and typescript utilizing a docker-compose.yml file to build the node.js backend and postgres db." />
+    <MESSAGE value="added services, routes and controllers for pokeAPi." />
+    <option name="LAST_COMMIT_MESSAGE" value="added services, routes and controllers for pokeAPi." />
   </component>
 </project>

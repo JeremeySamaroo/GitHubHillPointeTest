@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import {checkPokeApiHealth, getPokemon} from "../services/pokeapi.service";
+import {checkPokeApiHealth, getPokemon} from "../services/pokeApi.Service";
 
 
 export async function pokeApiHealthCheck(req: Request, res: Response) {
@@ -21,7 +21,9 @@ export async function pokeApiHealthCheck(req: Request, res: Response) {
 }
 export async function fetchPokemon(req: Request, res: Response) {
     try {
-        const { name } = req.params;
+        // const { name } = req.params;
+
+        const name = req.params.name as string;
 
         const data = await getPokemon(name);
 
