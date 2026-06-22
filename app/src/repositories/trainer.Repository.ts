@@ -31,7 +31,16 @@ export async function createTrainer(trainer: any) {
     return result.rows[0];
 }
 
-export async function findByEmail(email: string) {
+export async function findById(id: number) {
+    const result = await pool.query(
+        "SELECT * FROM trainers WHERE id = $1",
+        [id]
+    );
+
+    return result.rows[0];
+}
+
+export async function findByEmail(email: String) {
     const result = await pool.query(
         "SELECT * FROM trainers WHERE email = $1",
         [email]
@@ -39,3 +48,4 @@ export async function findByEmail(email: string) {
 
     return result.rows[0];
 }
+

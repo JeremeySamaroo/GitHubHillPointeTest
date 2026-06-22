@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc55995d-86e5-49dc-8b20-68b1cd88a89a" name="Changes" comment="Added authentication, SignUp, Login and Log Out.">
-      <change afterPath="$PROJECT_DIR$/app/src/tests/loginAndJWTAuthentication.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/tests/signUp.test.ts" afterDir="false" />
+    <list default="true" id="cc55995d-86e5-49dc-8b20-68b1cd88a89a" name="Changes" comment="Added validation sigUp, and Test for SignUp and Login Authentication.">
+      <change afterPath="$PROJECT_DIR$/app/sqlFiles/V2__Create_Character_Info_Table.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/controllers/characterInfo.Controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/models/characterInfo.Model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/repositories/characterInfo.Repository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/routes/characterInfo.Routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/services/characterInfo.Service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/util/characterInfoValidator.Util.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/util/randomNumberGenerator.Util.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sqlFiles/V1__Create_Trainer_Table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/sqlFiles/V1__Create_Trainer_Table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/controllers/auth.Controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/controllers/auth.Controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/services/auth.Service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/services/auth.Service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/repositories/trainer.Repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/repositories/trainer.Repository.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,23 +41,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "/Users/jeremeysamaroo/dev/PersonalDev/GitHubHillpointeTest/GitHubHillPointeTest/app/node_modules/jest",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Perforce",
-    "ts.external.directory.path": "/Users/jeremeysamaroo/dev/PersonalDev/GitHubHillpointeTest/GitHubHillPointeTest/app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jeremeysamaroo/dev/PersonalDev/GitHubHillpointeTest/GitHubHillPointeTest/app/src/repositories&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/Users/jeremeysamaroo/dev/PersonalDev/GitHubHillpointeTest/GitHubHillPointeTest/app/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Perforce&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/jeremeysamaroo/dev/PersonalDev/GitHubHillpointeTest/GitHubHillPointeTest/app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/repositories" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$" />
@@ -116,7 +125,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1782052131307</updated>
-      <workItem from="1782052132360" duration="27384000" />
+      <workItem from="1782052132360" duration="31259000" />
+      <workItem from="1782099446468" duration="5778000" />
     </task>
     <task id="LOCAL-00001" summary="Created Skeleton Project for Node.Js application, with express and typescript utilizing a docker-compose.yml file to build the node.js backend and postgres db.">
       <created>1782058791788</created>
@@ -139,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1782082045266</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added validation sigUp, and Test for SignUp and Login Authentication.">
+      <created>1782087793896</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1782087793896</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +177,7 @@
     <MESSAGE value="Created Skeleton Project for Node.Js application, with express and typescript utilizing a docker-compose.yml file to build the node.js backend and postgres db." />
     <MESSAGE value="added services, routes and controllers for pokeAPi." />
     <MESSAGE value="Added authentication, SignUp, Login and Log Out." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added authentication, SignUp, Login and Log Out." />
+    <MESSAGE value="Added validation sigUp, and Test for SignUp and Login Authentication." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added validation sigUp, and Test for SignUp and Login Authentication." />
   </component>
 </project>
