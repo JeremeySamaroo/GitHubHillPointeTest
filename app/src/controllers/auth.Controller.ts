@@ -4,6 +4,9 @@ import {
     signup,
     login
 } from "../services/auth.Service";
+import { Trainer } from "../models/trainer.Model";
+
+
 
 export async function signupController(
     req: Request,
@@ -13,6 +16,8 @@ export async function signupController(
         const trainer = await signup(req.body);
 
         res.status(201).json(trainer);
+
+
     } catch (error: any) {
         res.status(400).json({
             message: error.message
