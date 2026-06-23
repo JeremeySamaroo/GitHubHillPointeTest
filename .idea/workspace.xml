@@ -5,17 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc55995d-86e5-49dc-8b20-68b1cd88a89a" name="Changes" comment="Added validation sigUp, and Test for SignUp and Login Authentication.">
-      <change afterPath="$PROJECT_DIR$/app/sqlFiles/V2__Create_Character_Info_Table.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/controllers/characterInfo.Controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/models/characterInfo.Model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/repositories/characterInfo.Repository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/routes/characterInfo.Routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/services/characterInfo.Service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/util/characterInfoValidator.Util.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/util/randomNumberGenerator.Util.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/sqlFiles/V3__Create_Trainer_Pokemon_Table.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/sqlFiles/V4__Create_Player_Badge_Table.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/models/playerPokemon.Model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/repositories/playerBadge.Repository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/repositories/playerPokemon.Repository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/routes/trainer.Routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/routes/trainerProfile.Routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/services/badge.Service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/services/teamPokemon.Service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/services/trainer.Service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/services/trainerProfile.Service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/repositories/trainer.Repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/repositories/trainer.Repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/services/pokeApi.Service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/services/pokeApi.Service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +130,8 @@
       <option name="presentableId" value="Default" />
       <updated>1782052131307</updated>
       <workItem from="1782052132360" duration="31259000" />
-      <workItem from="1782099446468" duration="5778000" />
+      <workItem from="1782099446468" duration="11939000" />
+      <workItem from="1782169950742" duration="9611000" />
     </task>
     <task id="LOCAL-00001" summary="Created Skeleton Project for Node.Js application, with express and typescript utilizing a docker-compose.yml file to build the node.js backend and postgres db.">
       <created>1782058791788</created>
@@ -156,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1782087793896</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added validation sigUp, and Test for SignUp and Login Authentication.">
+      <created>1782105247999</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1782105248000</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

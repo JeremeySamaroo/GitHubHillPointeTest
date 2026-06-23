@@ -36,3 +36,41 @@ export async function getPokemon(name: string) {
         throw error;
     }
 }
+
+export type PokemonResponse = {
+    id: number;
+    name: string;
+};
+
+export class PokemonApiService {
+    async getRandomPokemon(): Promise<PokemonResponse> {
+        const pokemonId = Math.floor(Math.random() * 1025) + 1;
+
+        const response = await axios.get(
+            `https://pokeapi.co/api/v2/pokemon/${pokemonId}`
+        );
+
+        return {
+            id: response.data.id,
+            name: response.data.name,
+        };
+    }
+
+    async getMoves(pokemonId: number) {
+
+        const response = await axios.get(
+            `https://pokeapi.co/api/v2/pokemon/${pokemonId}`
+        );
+
+        return response.data.moves.map(
+            (move: any) => move.move.name
+        );
+    }
+
+
+
+
+
+}
+
+
