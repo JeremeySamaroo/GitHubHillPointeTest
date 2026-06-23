@@ -35,6 +35,7 @@ Your API must:
 ---
 
 
+
 ## Project Setup Info
 The application is built to run on docker. To Run application, install docker and its daemon.
 Once Docker is installed run the following command:
@@ -67,7 +68,22 @@ run > npm test
 Alternatively:
 run > docker exec -it node-express-app npm run test
 
+```
 
+## Passwords and Connection Strings
+```agsl
+postgres
+    -username: root,
+    -password: root,
+    
+pgAdmin
+    -Password: admin123
+
+pgAdmin database connet
+    server: postgres
+    database: app_db
+    username: root
+    password: root
 ```
 
 ## Executing Apis.
