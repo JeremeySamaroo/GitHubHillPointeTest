@@ -96,4 +96,100 @@ docker compose up --build -d
 ```agsl
 docker compose down -v
 ```
+3) Checking logs of application
+```agsl
+docker logs postgress
+or
+docker logs node-express-app
+or
+docker logs pgadmin
+or
+docker logs flyway
+```
+4To run test in docker 
+```agsl
+Step 1: 
+run > docker exec -it node-express-app sh 
+Step 2:
+run > npm test
+
+Alternatively:
+run > docker exec -it node-express-app npm run test
+
+
+```
+
+## Executing Apis.
+I have added a postman collection to make running more easy.
+
+The first api can be used to create Player:
+```agsl
+API_Name: 005_HillPoint_Post_Test_CreateTrainerPlayerApi
+API_URL: http://localhost:3000/auth/signup
+API_BODY:
+        {
+          "firstName": "ash",
+          "lastName": "Ketchum",
+          "age": 12,
+          "email": "ash1@pokemon.com",
+          "password": "pikachu123",
+          "trainerType": "Player"
+        }
+*Description*
+This API is use to create a trainer, it requires and email for trainerType player, however for the other two types "NPC-Trainer" | "NPC-GYM-Leader"
+the email is not necessary.
+*Examples*
+{
+  "firstName": "Asha",
+  "lastName": "Ketchum",
+  "age": 12,
+  "email": "asha1@pokemon.com",
+  "password": "pikachu123",
+  "trainerType": "NPC-Trainer"
+}
+
+{
+  "firstName": "Brock",
+  "lastName": "Harrison.",
+  "age": 12,
+  "email": "Brock.Harrison@pokemon.com",
+  "password": "onix123",
+  "trainerType": "NPC-GYM-Leader"
+}
+```
+
+The Second api can be used to login:
+```agsl
+API_Name: 008_HillPoint_Post_LoginApi
+API_URL: http://localhost:3000/auth/login
+API_BODY:
+        {
+           "email": "ash1@pokemon.com",
+           "password": "pikachu123"
+        }
+*Description*
+This API is used to login a trainer and return JWT token for that trainer. It should automatically set the {{jwtToken}} 
+in postman collection so authorized routes can be used.
+
+```
+
+The Third api can be used to create character information for Trainer, A trainer must have character information to generate its team. 
+This end point an authenticated endpoint user must be logged in to use.
+```agsl
+API_Name: 012_HillPoint_Post_Auth_CreateCharacterInfoApi
+API_URL: http://localhost:3000/character-info/auth/createCharacterInfo
+API_BODY:
+        {
+          "description": "Experienced Pokémon trainer from Pallet Town",
+          "email": "ash1@pokemon.com",
+          "trainerId": 0
+           }
+*Description*
+ A trainer must have character information to generate its team. This end point an authenticated endpoint user must be logged in to use.
+ To create a charcters Info, you must either use your email from when you create you trainer, or the id whn the trainer was created. 
+ Based on the trainer types the app sets the Amount of pokemon a Trainer and utilizes the auto generated level of trainer "NPC-Trainer" | "NPC-GYM-Leader"
+ to determine the max amount of Pokemon they can have. If Trainer type is Player the Max can have is 6. 
+
+```
+
 
