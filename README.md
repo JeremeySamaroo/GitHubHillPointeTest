@@ -87,6 +87,13 @@ Happy coding!
 ## Project Setup Info
 The application is built to run on docker. To Run application, install docker and its daemon.
 Once Docker is installed run the following command:
+
+1) Setup and Start application:
 ```agsl
 docker compose up --build -d
 ```
+2) Stop application destroy run environment:
+```agsl
+docker compose down -v
+```
+
